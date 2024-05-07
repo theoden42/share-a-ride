@@ -1,7 +1,5 @@
 # SHARE A RIDE 
 
----
-
 ## Description
 
 This Project is a ride sharing app which allows the users to create ride offers and accept ride offers and chat in realtime. 
