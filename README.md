@@ -13,12 +13,12 @@ The design details of the projects are currently in [here](design-doc/overview.m
 1. Create a fork of the repository
 2. Clone the fork from the repository 
 3. For Backend 
-     - use ```bash python3 -m venv venv ``` to create a virtual environment 
-     - use ```bash pip3 install -r requirements.txt``` to install the dependencies 
-     - use ```bash python3 manage.py runserver``` to run local server 
+     - use `bash python3 -m venv venv ` to create a virtual environment 
+     - use `bash pip3 install -r requirements.txt` to install the dependencies 
+     - use `bash python3 manage.py runserver` to run local server 
      - to add an application add "api.application_name" to settings.py in backend/api
-4. Use ```bash git fetch upstream main``` to fetch recent changes from the upstream 
-5. Use ```bash git rebase upsteam/main``` to rebase your **current branch** 
+4. Use `bash git fetch upstream main` to fetch recent changes from the upstream 
+5. Use `bash git rebase upsteam/main` to rebase your **current branch** 
 6. Push to your local and create a pull request. 
 
 
