@@ -3,7 +3,8 @@ name: API Tests and Lint
 on:
   push:
     branches: [ main ] 
-  pull_requests: [ main ] 
+  pull_request:
+    branches: [ main ] 
 
 defaults: 
   run: 
