@@ -18,8 +18,10 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Profile',
             fields=[
-                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, primary_key=True, serialize=False, to=settings.AUTH_USER_MODEL)),
-                ('PhoneNumber', phonenumber_field.modelfields.PhoneNumberField(blank=True, max_length=128, region=None, unique=True)),
+                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE,
+                 primary_key=True, serialize=False, to=settings.AUTH_USER_MODEL)),
+                ('PhoneNumber', phonenumber_field.modelfields.PhoneNumberField(
+                    blank=True, max_length=128, region=None, unique=True)),
             ],
         ),
     ]
