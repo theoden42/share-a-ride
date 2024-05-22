@@ -2,8 +2,6 @@ from rest_framework import generics
 from .models import Ride
 from .serializer import RideSerializer
 from .permissions import IsRideOwner
-from rest_framework.views import APIView
-from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
@@ -29,7 +27,7 @@ class FilterRideListAPIView(generics.ListAPIView):
 
         queryset = Ride.objects.filter(
             src_location=query_src_location, dst_location=query_dst_location)
-        if (queryset == None):
+        if queryset is None:
             return "No such ride found"
         return queryset
 
