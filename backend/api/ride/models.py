@@ -1,8 +1,9 @@
 from django.db import models
+from ..user.models import Profile
 
 
 class Ride(models.Model):
-    user_initiator = models.CharField(max_length=100)
+    user_initiator = models.ForeignKey(Profile, on_delete=models.PROTECT)
     src_location = models.CharField(max_length=100)
     dst_location = models.CharField(max_length=100)
     total_fare = models.IntegerField()
