@@ -17,13 +17,16 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Ride',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('src_location', models.CharField(max_length=100)),
                 ('dst_location', models.CharField(max_length=100)),
                 ('total_fare', models.IntegerField()),
                 ('num_passengers', models.IntegerField()),
-                ('start_datetime', models.DateTimeField(default=datetime.datetime(2024, 5, 22, 9, 46, 42, 182452))),
-                ('user_initiator', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='user.profile')),
+                ('start_datetime', models.DateTimeField(
+                    default=datetime.datetime(2024, 5, 22, 9, 46, 42, 182452))),
+                ('user_initiator', models.ForeignKey(
+                    on_delete=django.db.models.deletion.PROTECT, to='user.profile')),
             ],
         ),
     ]

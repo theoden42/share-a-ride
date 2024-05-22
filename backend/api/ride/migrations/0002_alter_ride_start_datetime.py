@@ -14,6 +14,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='ride',
             name='start_datetime',
-            field=models.DateTimeField(default=datetime.datetime(2024, 5, 22, 9, 46, 51, 237530)),
+            field=models.DateTimeField(
+                default=datetime.datetime(2024, 5, 22, 9, 46, 51, 237530)),
         ),
     ]

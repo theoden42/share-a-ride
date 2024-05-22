@@ -15,6 +15,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='ride',
             name='user_initiator',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='ride_creator', to='user.profile'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT,
+                                    related_name='ride_creator', to='user.profile'),
         ),
     ]
