@@ -11,8 +11,12 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['username', 'first_name', 'last_name', 'password', 'id']
-        extra_kwargs = {'username': {'validators': [UniqueValidator(queryset=User.objects.all())]}, 'password': {
-            'write_only': True, 'required': True}, 'first_name': {'required': True}, 'last_name': {'required': True}}
+        extra_kwargs = {
+            'username': {'validators': [UniqueValidator(queryset=User.objects.all())]},
+            'password': {'write_only': True, 'required': True},
+            'first_name': {'required': True},
+            'last_name': {'required': True}
+        }
 
 
 class ProfileSerializer(serializers.ModelSerializer):
