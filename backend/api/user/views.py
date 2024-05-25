@@ -1,6 +1,6 @@
 from .models import Profile
 from rest_framework import generics
-from .serializers import UserSerializer, ProfileSerializer
+from .serializers import ProfileSerializer
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from django.contrib.auth import get_user_model
 
