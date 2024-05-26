@@ -5,5 +5,5 @@ from django.db import models
 
 class Profile(models.Model):
     user = models.OneToOneField(
-        get_user_model(), primary_key=True, on_delete=models.CASCADE, related_name='UserProfile')
+        get_user_model(), primary_key=True, on_delete=models.CASCADE, related_name='user_profile')
     phone_number = PhoneNumberField(null=False, blank=True, unique=True)
