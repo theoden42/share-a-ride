@@ -13,7 +13,7 @@ class SignUp(generics.CreateAPIView):
     queryset = Profile.objects.all()
 
 
-class UserListApiView(generics.ListAPIView):
+class UserListApiView(generics.RetrieveAPIView):
     permission_classes = [IsAuthenticated]
     serializer_class = ProfileSerializer
 
