@@ -27,7 +27,15 @@ class ProfileSerializer(serializers.ModelSerializer):
         fields = '__all__'
         extra_kwargs = {'phone_number': {'required': True},
                         'user': {'required': True, 'read_only': True}, }
-    
+
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        current_user = self.context['request'].user
+
+        if (current_user.id != instance.user.id):
+            representation.pop('phone_number')
+        return representation
+
     def create(self, validated_data):
         user_data = validated_data.pop('user', None)
         user_serializer = UserSerializer(data=user_data)
@@ -42,4 +50,3 @@ class ProfileSerializer(serializers.ModelSerializer):
 
         profile = Profile.objects.create(user=UserData, **validated_data)
         return profile
-
