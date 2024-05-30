@@ -13,12 +13,7 @@ class SignUp(generics.CreateAPIView):
     queryset = Profile.objects.all()
 
 
-class UserListApiView(generics.RetrieveAPIView):
+class UserRetrieveApiView(generics.RetrieveAPIView):
     permission_classes = [IsAuthenticated]
     serializer_class = ProfileSerializer
-
-    def get_queryset(self):
-        if str(self.kwargs['id']) == str(self.request.user.id):
-            return Profile.objects.filter(user__id=self.kwargs['id'])
-        else:
-            return Profile.objects.filter(user__id=self.kwargs['id'])
+    queryset = Profile.objects.all()
