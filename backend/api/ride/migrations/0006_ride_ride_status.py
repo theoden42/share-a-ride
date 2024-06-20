@@ -13,6 +13,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='ride',
             name='ride_status',
-            field=models.CharField(choices=[('Upcoming', 'Upcoming'), ('Cancelled', 'Cancelled'), ('Completed', 'Completed')], default='Upcoming', max_length=10),
+            field=models.CharField(choices=[('Upcoming', 'Upcoming'), ('Cancelled', 'Cancelled'), (
+                'Completed', 'Completed')], default='Upcoming', max_length=10),
         ),
     ]
