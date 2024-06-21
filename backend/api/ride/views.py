@@ -38,19 +38,9 @@ class CreateRide(generics.CreateAPIView):
     permission_classes = [IsAuthenticated]
 
 
-class UpdateRide(generics.RetrieveUpdateAPIView):
+class RetrieveUpdateRideView(generics.RetrieveUpdateAPIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, IsRideOwner, ]
     serializer_class = RideSerializer
     lookup_url_kwarg = 'id'
     queryset = Ride.objects.all()
-
-
-class DeleteRideAPIView(generics.DestroyAPIView):
-    "API view to delete a particular ride"
-    authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAuthenticated, IsRideOwner,]
-    serializer_class = RideSerializer
-    queryset = Ride.objects.all()
-    lookup_url_kwarg = 'id'
-    print("Ride successfully deleted")
