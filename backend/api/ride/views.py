@@ -38,7 +38,7 @@ class CreateRide(generics.CreateAPIView):
     permission_classes = [IsAuthenticated]
 
 
-class RetrieveUpdateDestroyRideView(generics.RetrieveUpdateDestroyAPIView):
+class RetrieveUpdateRideView(generics.RetrieveUpdateAPIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, IsRideOwner, ]
     serializer_class = RideSerializer

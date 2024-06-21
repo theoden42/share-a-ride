@@ -6,5 +6,5 @@ urlpatterns = [
     path('filter/<str:src_loc>/<str:dst_loc>/',
          views.FilterRideListAPIView.as_view()),
     path('create_ride/', views.CreateRide.as_view()),
-    path('<int:id>/', views.RetrieveUpdateDestroyRideView.as_view()),
+    path('<int:id>/', views.RetrieveUpdateRideView.as_view()),
 ]
