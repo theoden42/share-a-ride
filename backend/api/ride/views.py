@@ -44,14 +44,16 @@ class RetrieveUpdateRideView(generics.RetrieveUpdateAPIView):
     serializer_class = RideSerializer
     lookup_url_kwarg = 'id'
     queryset = Ride.objects.all()
-    
+
+
 class RetrieveUpdatePassengerView(generics.UpdateAPIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, IsRideOwner]
     serializer_class = PassengerSerializer
     lookup_url_kwarg = 'id'
     queryset = Passengers.objects.all()
-   
+
+
 class CreateCoPassengers(generics.CreateAPIView):
     authentication_classes = JWTAuthentication
     permission_classes = IsAuthenticated
