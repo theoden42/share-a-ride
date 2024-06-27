@@ -24,7 +24,8 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True,
                  primary_key=True, serialize=False, verbose_name='ID')),
                 ('request_status', models.CharField(choices=[('Accepted', 'Accepted'), (
-                    'Rejected', 'Rejected'), ('Pending', 'Pending')], default='Pending', max_length=10)),
+                    'Rejected', 'Rejected'), ('Pending', 'Pending')],
+                    default='Pending', max_length=10)),
                 ('ride', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT,
                  related_name='copassenger', to='ride.ride')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT,
