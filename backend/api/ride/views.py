@@ -1,6 +1,6 @@
 from rest_framework import generics
-from .models import Ride
-from .serializer import RideSerializer
+from .models import Ride, Passengers
+from .serializer import RideSerializer, PassengerSerializer
 from .permissions import IsRideOwner
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
@@ -44,3 +44,17 @@ class RetrieveUpdateRideView(generics.RetrieveUpdateAPIView):
     serializer_class = RideSerializer
     lookup_url_kwarg = 'id'
     queryset = Ride.objects.all()
+
+
+class RetrieveUpdatePassengerView(generics.UpdateAPIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated, IsRideOwner]
+    serializer_class = PassengerSerializer
+    lookup_url_kwarg = 'id'
+    queryset = Passengers.objects.all()
+
+
+class CreateCoPassengers(generics.CreateAPIView):
+    authentication_classes = JWTAuthentication
+    permission_classes = IsAuthenticated
+    serializer_class = PassengerSerializer
